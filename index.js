@@ -5,10 +5,10 @@ const {connection} = require("./db");
 const {userRouter} = require("./routes/userRoute");
 const {postRouter} = require("./routes/postroutes");
 const {authorization} = require("./Middleware/authentication")
+app.use(cors())
 
 const app = express();
 app.use(express.json())
-app.use(cors())
 app.use("/users",userRouter)
 app.use(authorization)
 app.use("/posts",postRouter)
