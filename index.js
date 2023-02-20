@@ -8,7 +8,7 @@ const {authorization} = require("./Middleware/authentication")
 
 const app = express();
 app.use(express.json())
-
+app.use(cors())
 app.use("/users",userRouter)
 app.use(authorization)
 app.use("/posts",postRouter)
