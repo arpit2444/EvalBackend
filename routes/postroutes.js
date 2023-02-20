@@ -6,9 +6,9 @@ const postRouter = express.Router()
 
 postRouter.get("/",async(req,res)=>{
     const query = req.query;
-    const device = query.device 
-    const device1 = query.device1
-    const device2= query.device2
+    const device = query.device || mobile
+    const device1 = query.device1 || mobile
+    const device2= query.device2 || mobile
 
     try{
     const post = await PostModel.find({$and:{device:device,device:device1,device:device2}})
